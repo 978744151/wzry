@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="zh">
     <meta charset="utf-8">
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no" />
     <!-- <link rel="shortcut icon" href="{HOME_THEME_PATH}images/base/title.png"> -->
-    <meta name="applicable-device" content="pc,mobile"/>
+    <meta name="applicable-device" content="pc,mobile" />
     <!-- 测试 -->
     <META HTTP-EQUIV="pragma" CONTENT="no-cache">
     <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
@@ -24,42 +26,42 @@
     <script src="js/base.js"></script>
     <script type="text/javascript">
 
-        function getCity(){
-            $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js',function(){
-              $('.city>span').html(remote_ip_info.city);
+        function getCity() {
+            $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function () {
+                $('.city>span').html(remote_ip_info.city);
             });
         }
-        function showview(view){
+        function showview(view) {
             view.fadeIn(100);
         }
-        function hideview(view){
+        function hideview(view) {
             view.fadeOut(100);
             //view.animate({'left':'100%'},50);
         }
-        function locationview(viewname,page=''){
+        function locationview(viewname, page = '') {
             window.parent.navSetOn(viewname);
-            var url = page!='' ? viewname + '.html?page='+page : viewname + '.html';
+            var url = page != '' ? viewname + '.html?page=' + page : viewname + '.html';
             window.location.href = url;
         }
-        function page_onload(){
+        function page_onload() {
             //initPage();
             getCity();
 
-            $('.option_box>div').on('click',function(){
-                if($(this).attr('view')){
+            $('.option_box>div').on('click', function () {
+                if ($(this).attr('view')) {
                     var viewname = $(this).attr('view');
                     $(this).find('b').hide();
-                    showview($('.'+viewname));
+                    showview($('.' + viewname));
                 }
-                if($(this).attr('page')){
-                    locationview($(this).attr('page'),$(this).attr('op'));
+                if ($(this).attr('page')) {
+                    locationview($(this).attr('page'), $(this).attr('op'));
                 }
             });
 
-            $('.view_btn').on('click',function(){
+            $('.view_btn').on('click', function () {
                 hideview($(this).parent());
             })
-            $('.vip_list>span').on('click',function(){
+            $('.vip_list>span').on('click', function () {
                 var _self = $(this);
                 $('.vip_list>span').removeClass('on');
                 _self.addClass('on');
@@ -67,12 +69,13 @@
         }
     </script>
 </head>
-    <body onselectstart="return false;" oncontextmenu="self.event.returnValue=false;">
+
+<body onselectstart="return false;" oncontextmenu="self.event.returnValue=false;">
     <!-- <div class='loadingbox' id='loadingbox'>
         <img src="images/game_logo.png"/>
         <span>LOADING</span>
     </div> -->
-<!--
+    <!--
     <div class='mine_view bag_view'>
     </div>
     <div class='mine_view vip_view'>
@@ -118,7 +121,7 @@
         </div>
     </div>
     -->
-  <!--   <div class='alert_box cash_view'>
+    <!--   <div class='alert_box cash_view'>
       <div class='alert_body'>
           <div class='alert_title'>
               <span>提现余额</span>
@@ -170,7 +173,7 @@
             <div class='alert_title'>
                 <span>系统消息</span>
                 <div class='alert_close'>
-                    <img src="images/alert_close_btn.png"/>
+                    <img src="images/alert_close_btn.png" />
                 </div>
 
             </div>
@@ -196,7 +199,7 @@
 
     <div class='page_box'>
         <div class='page_bg'>
-            <img src="images/vip_bg.jpg"/>
+            <img src="images/vip_bg.jpg" />
         </div>
 
         <div class='page_body'>
@@ -204,7 +207,7 @@
                 <div class='headimgbox'>
                     <img src="images/headimg.jpg" />
                     <span>
-                        <img src="images/mine_level_1.png"/>
+                        <img src="images/mine_level_1.png" />
                     </span>
                 </div>
                 <div class='userinfo'>
@@ -216,39 +219,39 @@
                     <span>佣金余额：254</span>
                 </div>
                 <span class='musicbtn'>
-                    <img src="images/mine_icon_music.png"/>
+                    <img src="images/mine_icon_music.png" />
                 </span>
                 <span class='city'>
-                    <img src="images/mine_icon_address.png"/>
+                    <img src="images/mine_icon_address.png" />
                     <span>定位中</span>
                 </span>
             </div>
             <div class='option_box'>
                 <div page='bag_view'>
-                    <img src="images/mine_icon_bag.png"/>
+                    <img src="images/mine_icon_bag.png" />
                     <span>我的背包</span>
-                    <a><img src="images/option_arror.png"/></a>
+                    <a><img src="images/option_arror.png" /></a>
                     <b></b>
                 </div>
                 <div page='shop' op='vip'>
-                    <img src="images/mine_icon_vip.png"/>
+                    <img src="images/mine_icon_vip.png" />
                     <span>会员充值</span>
-                    <a><img src="images/option_arror.png"/></a>
+                    <a><img src="images/option_arror.png" /></a>
                 </div>
                 <div page='cash_view'>
-                    <img src="images/mine_icon_cash.png"/>
+                    <img src="images/mine_icon_cash.png" />
                     <span>余额提现</span>
-                    <a><img src="images/option_arror.png"/></a>
+                    <a><img src="images/option_arror.png" /></a>
                 </div>
-     <!--            <div page='charges_view'>
-                    <img src="images/mine_icon_charges.png"/>
+                <div page='charges_view'>
+                    <img src="images/mine_icon_charges.png" />
                     <span>佣金提现</span>
-                    <a><img src="images/option_arror.png"/></a>
-                </div> -->
+                    <a><img src="images/option_arror.png" /></a>
+                </div>
                 <div view='setting_view'>
-                    <img src="images/mine_icon_setting.png"/>
+                    <img src="images/mine_icon_setting.png" />
                     <span>系统消息</span>
-                    <a><img src="images/option_arror.png"/></a>
+                    <a><img src="images/option_arror.png" /></a>
                     <b></b>
                 </div>
             </div>
@@ -257,5 +260,6 @@
 
 
     </div>
-    </body>
+</body>
+
 </html>
